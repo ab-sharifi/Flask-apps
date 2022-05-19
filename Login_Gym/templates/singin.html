@@ -10,20 +10,42 @@
 {% endblock %}
 
 
+
 {% block body %}
-<form class="form-login" action="/singin" method="post">
-    <label>
-         Username
-        <input type="text" name="username" placeholder="Enter Username">
-    </label>
-    <label>
-        Password
-        <input type="text" name="password" placeholder="Enter Password">
-    </label>
-    <label >
-        Confirm Password
-        <input type="text" name="password-re" placeholder="Repeat Password">
-    </label>
-    <input type="submit" value="Register">
-</form>
+<div class="form">
+
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+    <h2>Sing In</h2>
+
+    <form action="/singin" method="post" id="login-form">
+        <!-- username -->
+      <p>
+      <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+      </p>
+      <!-- password -->
+      <p>
+      <input type="password" id="email" name="password" placeholder="Enter Password" required><i class="validation"><span></span><span></span></i>
+      </p>
+      <!-- repeat password -->
+      <p>
+      <input type="password" id="email" name="password_re" placeholder="Confirm Password" required><i class="validation"><span></span><span></span></i>
+      </p>
+      <!-- email -->
+      <p>
+      <input type="email" id="email" name="email" placeholder="Enter Email" required><i class="validation"><span></span><span></span></i>
+      </p>
+      <!-- submit -->
+      <p>
+      <input type="submit" id="login" value="Register">
+      </p>
+    </form>
+    <!-- footer -->
+    <div id="create-account-wrap">
+      <p>Go to your account: <a href="/login">Log in </a><p>
+    </div>
+  </div>
+
+
+</div>
 {% endblock %}

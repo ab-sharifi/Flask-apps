@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      
     <link
       rel="stylesheet"
       href="{{ url_for('static',filename='css/style.css') }}"
@@ -11,30 +14,38 @@
     <title>Document</title>
   </head>
   <body>
+
     <div class="container">
-      
       <!-- message Error -->
-          {% if message %}
-          <div class="alert">
-              <span class="closebtn" 
-              onclick="this.parentElement.style.display='none';">&times;</span>
-              {{message}}
-            </div>
-          {% endif %}
+      {% if message %}
+      <div class="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        {{message}}
+      </div>
+      {% endif %}
+      
+      <!-- success message -->
+      {% if success %}
+        <div class="w3-panel w3-green">
+          <h3>Register Success Full!</h3>
+        </div>
+      {% endif %}
 
 
+      <!-- header  -->
       <header>
         <h1>Franklin Running Club</h1>
-        {% block button %}
-        {% endblock %}
+        {% block button %} {% endblock %}
       </header>
 
       <main>
-        <br>
-        <br>
-        {% block body %}
-
-        {% endblock %}
+        <br />
+        <br />
+        {% block body %} {% endblock %}
       </main>
     </div>
   </body>
