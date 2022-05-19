@@ -1,5 +1,5 @@
 header{
-    background-color: blue;
+    background-color: rgb(105, 105, 235);
     color:white;
     padding:10px;
     border-radius:8px;
@@ -49,6 +49,25 @@ body{
 .media h4{
     margin-top: 0;
 }
+.btn a{
+    margin: 0 auto }
+
+button{
+    background-color: rgb(105, 105, 235);
+    color: white;
+    width:80px;
+    height:40px;
+    border-radius:8px;
+    font-size: 20px;
+    transition-duration: 0.4s;
+
+}
+
+button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(103, 103, 133);
+}
+
 
  /* responsive for Mobile's*/
 @media(max-width:500px){
