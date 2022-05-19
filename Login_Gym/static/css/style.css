@@ -21,6 +21,7 @@ body{
     padding:10px;
     border-radius: 8px;
     margin-top:15px;
+    max-width: 1080px;
 }
 .media-content{
     overflow:hidden;
@@ -49,8 +50,7 @@ body{
 .media h4{
     margin-top: 0;
 }
-.btn a{
-    margin: 0 auto }
+
 
 button{
     background-color: rgb(105, 105, 235);
@@ -60,6 +60,8 @@ button{
     border-radius:8px;
     font-size: 20px;
     transition-duration: 0.4s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 
 }
 
