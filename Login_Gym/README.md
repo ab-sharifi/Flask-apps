@@ -2,17 +2,18 @@
 
 ## for Run:
 ### - in windows: 
->> set FLASK_APP=application.py
+
+1 - set FLASK_APP=application.py
 >> <br>
->> py -3 -m venv venv
->> <br>
->> .\venv\scripts\activate.bat
+2 - py -3 -m venv venv
+ <br>
+3 - .\venv\scripts\activate.bat
 
 
 ### - in Linux:
->> export FLASK_APP=application.py
->> <br>
->> source /venv/bin/activate
+1 - export FLASK_APP=application.py
+ <br>
+2 -  source /venv/bin/activate
  <br>
 
 
