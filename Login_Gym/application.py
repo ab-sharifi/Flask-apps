@@ -92,8 +92,8 @@ def singin():
 
 @app.route('/logout')
 def logout():
-    session['name'] = None
-    redirect('index')
+    session["name"] = None
+    return redirect('/')
 
 
 
