@@ -71,6 +71,16 @@ button:hover{
 }
 
 
+
+/* login form */
+.form-login input[type='text']{
+    width: 100%;
+    height:20px;
+    margin:8px;
+}
+
+
+
  /* responsive for Mobile's*/
 @media(max-width:500px){
     .media{

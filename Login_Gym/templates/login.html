@@ -1,5 +1,32 @@
 {% extends "layout.html" %}
 
+
+
+{% block button %}
+<div class="btn">
+    <a href="{{ url_for('singin') }}"><button>Sing in</button></a>
+</div>
+{% endblock %}
+
+
 {% block body %}
+
+
+    <form class="form-login" action="/login" method="post">
+        <label>
+             Username
+            <input type="text" name="username" placeholder="Enter Username">
+        </label>
+        <label>
+            Password
+            <input type="text" name="password" placeholder="Enter Password">
+        </label>
+        <label >
+            Confirm Password
+            <input type="text" name="password-re" placeholder="Repeat Password">
+        </label>
+        <input type="submit" value="Register">
+    </form>
+
 
 {% endblock %}
