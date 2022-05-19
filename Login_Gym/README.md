@@ -4,7 +4,7 @@
 ### - in windows: 
 
 1 - set FLASK_APP=application.py
->> <br>
+<br>
 2 - py -3 -m venv venv
  <br>
 3 - .\venv\scripts\activate.bat
