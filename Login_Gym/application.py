@@ -18,19 +18,25 @@ def index():
 
 @app.route('/login',methods=['POST','GET'])
 def login():
+    return render_template('login.html')
+
+
+
+
+@app.route('/singin',methods=['POST','GET'])
+def singin():
     # GET
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('singin.html')
+
     # POST
     if request.method == 'POST':
         username =request.form.get('username')
         password =request.form.get('password')
         password_re =request.form.get('password-re')
 
-        if not password or not password or not password_re:
-            return render_template('login.html.html',message='Please Complete Field ')
-
-
-@app.route('/singin')
-def singin():
-    return render_template('singin.html')
+    if not username or not password or not password_re:
+        return render_template('singin.html',message='Please Complete Field ')
+    if password != password_re:
+        return render_template('singin.html',message="Password's not Match! ")
+        

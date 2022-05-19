@@ -55,12 +55,12 @@ body{
 button{
     background-color: rgb(105, 105, 235);
     color: white;
-    width:80px;
+    width:90px;
     height:40px;
     border-radius:8px;
     font-size: 20px;
     transition-duration: 0.4s;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Georgia, Times, 'Times New Roman', serif;
 
 
 }
@@ -78,6 +78,39 @@ button:hover{
     height:20px;
     margin:8px;
 }
+
+
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #f93b2d; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+.alert:hover{
+    
+    background-color: #ed6a61; /* Red */
+}
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
 
 
 
