@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/style.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+          <h1>Welcom {{ name[0].username }}</h1>
+        <h1>Franklin Running Club</h1>
+        <!-- button for navigation -->
+        <div class="btn">
+          <a href="{{ url_for('logout') }}"><button>log Out</button></a>
+        </div>
+      </header>
+
+      <main class="clearfix main">
+        <h2>Running Tips</h2>
+        <div>
+          <div class="media">
+            <img
+              src="{{ url_for('static',filename='img/runner.png') }}"
+              alt="runner"
+              class="media-image"
+            />
+            <div class="media-content">
+              <h4>Strength</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                necessitatibus, eius molestiae non autem debitis.
+              </p>
+            </div>
+          </div>
+          <div class="media">
+            <img
+              src="{{ url_for('static',filename='img/shoes.png') }}"
+              alt="shoes"
+              class="media-image"
+            />
+            <div class="media-content">
+              <h4>Candence</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                necessitatibus, eius molestiae non autem debitis.
+              </p>
+            </div>
+          </div>
+          <div class="media">
+            <img
+              src="{{ url_for('static',filename='img/shoes.png') }}"
+              alt="runner"
+              class="media-image"
+            />
+            <div class="media-content">
+              <h4>Change it up</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                necessitatibus, eius molestiae non autem debitis.
+              </p>
+            </div>
+          </div>
+          <div class="media">
+            <img
+              src="{{ url_for('static',filename='img/runner.png') }}"
+              alt="shoes"
+              class="media-image"
+            />
+            <div class="media-content">
+              <h4>Focus on Form</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                necessitatibus, eius molestiae non autem debitis.
+              </p>
+            </div>
+          </div>
+          <!-- For float fixes -->
+          <div style="clear: both"></div>
+
+
+      </main>
+    </div>
+  </body>
+</html>

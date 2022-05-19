@@ -11,18 +11,20 @@
 
 
 {% block body %}
+
 <!-- partial:index.partial.html -->
 <div id="login-form-wrap">
     <h2>Log In</h2>
-    <form action="/singin" method="post" id="login-form">
-      <p>
+    <form action="/login" method="post" id="login-form">
+      <!-- username -->
+        <p>
       <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
       </p>
       <!-- password -->
       <p>
       <input type="password" id="email" name="password" placeholder="Enter Password" required><i class="validation"><span></span><span></span></i>
       </p>
-      
+      <!-- submit -->
       <p>
       <input type="submit" id="login" value="Login">
       </p>

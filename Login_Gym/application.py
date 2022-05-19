@@ -1,12 +1,11 @@
-from flask import Flask, render_template, request ,url_for,session 
+from flask import Flask, redirect, render_template, request ,url_for,session 
 from flask_session import Session
-import sqlite3 
+from cs50 import SQL
+import math
 
 # create connection with data base
-conn = sqlite3.connect('database.db')
+db = SQL('sqlite:///database.db')
 
-# create a cursor for Data base
-db = conn.cursor()
 
 app = Flask(__name__)
 
@@ -19,13 +18,36 @@ Session(app)
 
 @app.route('/')
 def index():
+
     return render_template('index.html')
 
 
 
 @app.route('/login',methods=['POST','GET'])
 def login():
-    return render_template('login.html')
+    
+    # GET    
+    if request.method == 'GET':
+        return render_template('login.html')
+
+    # POST
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        if not password or not username:
+            return render_template('login.html',message='Please Complete The Fields')
+        
+        answer = db.execute('SELECT username from users WHERE username LIKE ?',username)
+        if len(answer) != 0:
+            answer = db.execute('SELECT password from users WHERE password == ?',hash(password))
+            if len(answer) != 0:
+                return redirect('homePage')
+            else:
+                return render_template('login.html',message='Password is Wring')
+        else:
+            return render_template('login.html',message='Username Not found')
+
 
 
 
@@ -36,10 +58,6 @@ def singin():
     if request.method == 'GET':
         return render_template('singin.html')
 
-    username = ''
-    password = ''
-    password_re = ''
-    email = ''
     # POST
     if request.method == 'POST':
         username = request.form.get('username')
@@ -56,17 +74,32 @@ def singin():
         return render_template('singin.html',message="Password's not Match! ")
     
     # check is Username is available in data base or Not
-    answer = db.execute('SELECT username FROM users WHERE name LIKE ?',username)
-    conn.commit()
+    answer = db.execute('SELECT username FROM users WHERE username LIKE ?',username)
+
     if len(answer) != 0 :
-        conn.close()
-        return render_template('singin.html',message='This Username takes bu another User')
+        return render_template('singin.html',message='This Username takes by another User')
     
     # if username is not in data base so we register user
     else:
         answer = db.execute("""INSERT INTO users ('username', 'password','email')
         VALUES (?,?,?) """,username,hash(password),email)
-        conn.commit()
-        conn.close()
+
+        session["name"] = hash(password)
+        
         return render_template('singin.html',success= 'Register complete')      
 
+
+
+@app.route('/logout')
+def logout():
+    session['name'] = None
+    redirect('index')
+
+
+
+@app.route('/homePage')
+def homePage():
+    temp = session['name']
+    name  = db.execute('SELECT username FROM users WHERE password LIKE ?',temp)
+    return render_template('homePage.html',name = name)
+    
