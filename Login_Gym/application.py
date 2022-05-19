@@ -6,6 +6,7 @@ import math
 # create connection with data base
 db = SQL('sqlite:///database.db')
 
+# create web Flask application
 app = Flask(__name__)
 
 # config session 
@@ -13,11 +14,15 @@ app.config['SESSION_PERMANENT'] = False
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
+
+# index home 
 @app.route('/')
 def index():
-
     return render_template('index.html')
 
+
+
+# LOG IN 
 @app.route('/login',methods=['POST','GET'])
 def login():
     
@@ -43,6 +48,9 @@ def login():
         else:
             return render_template('login.html',message='Username Not found')
 
+        
+        
+# SING IN        
 @app.route('/singin',methods=['POST','GET'])
 def singin():
     # GET
@@ -77,12 +85,17 @@ def singin():
         session["name"] = hash(password)        
         return render_template('singin.html',success= 'Register complete')      
 
+    
+    
+# LOG OUT
 @app.route('/logout')
 def logout():
     session["name"] = None
     return redirect('/')
 
 
+
+#HOME PAGE
 @app.route('/homePage')
 def homePage():
     temp = session['name']
