@@ -1,5 +1,3 @@
-from crypt import methods
-from distutils.log import error
 import sqlite3
 from flask import Flask, render_template, redirect, request,session
 
@@ -17,16 +15,9 @@ def index():
 
 @app.route('/singup',methods=['POST','GET'])
 def singup():
+     return render_template('singup.html')
 
-    username = request.form.get('username')
-    password = request.form.get('password')
-    email = request.form.get('email')
 
-    if request.method == 'GET':
-        return render_template('singup.html')
-
-    if not username or not password or not email:
-        return render_template('singup.html',message='Full The Form')
     
 
 
