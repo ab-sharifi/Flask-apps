@@ -6,7 +6,7 @@ body{
     width: 80%;
     height: 80vh;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 5%;
 
     background-color: #34495e;
 }
@@ -39,6 +39,8 @@ body{
     width: 350px;
     height: 500px;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
 }
 
 .register .form{
@@ -64,6 +66,32 @@ body{
     margin-top: 10px;
 }
 
-input[type='checkbox']{
 
-}
+/* alert style */
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }

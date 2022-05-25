@@ -15,8 +15,22 @@ def index():
 
 @app.route('/singup',methods=['POST','GET'])
 def singup():
-     return render_template('singup.html')
+    
+    # GET
+    if request.method == 'GET':
+        return render_template('singup.html')
+    
+    # POST
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        email = request.form.get('email')
 
+        # check box's Not Empty
+        if not email or not username or not password:
+            return render_template("singup.html",message='Error: Please Full The Box')
+
+        return render_template("singup.html",success='Register Complete')
 
     
 
