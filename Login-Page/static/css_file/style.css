@@ -1,0 +1,69 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 10%;
+
+    background-color: #34495e;
+}
+
+.container button{
+    background-color: #5da0a2;
+    font-size: 40px;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5px;    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button:hover{
+    background-color: #5c3e84;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.register .form{
+    margin-top: 25px;
+}
+
+.register input[type='submit'] , input[type='text'], input[type='password'],input[type='email']{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.register input[type='submit']{
+    background-color: #80d6ff;
+    width: 260px;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.form label{
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+input[type='checkbox']{
+
+}
