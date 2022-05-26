@@ -15,6 +15,10 @@ Then Install requirements Library's:
         
         pip install -r requirements.txt 
 
+
+Then Just type: 
+        flask fun
+
 ### home page
 <img src="static/homepage.png"  width="450px">
 
