@@ -31,23 +31,27 @@
 
         <form action="{{ url_for('singup') }}" method="POST">
             <div class="form">
-                <label>Username</label><br>
+                <label><span >Username</span></label><br>
                 <input type="text" name="username" placeholder='Enter your username'>        
             </div>
             
             <div class="form">    
-                <label>Password</label><br>
+                <label><span >Password</span></label><br>
                 <input type="password" name="password" placeholder='Enter your Password'>
             </div>
     
             <div class="form">
-                <label>Email</label> <br>
+                <label>
+                    <span >Email</span>
+                </label> <br>
+
                 <input type="email" name="email" placeholder='Enter your Email'>
             </div>
             
             <div class="form">
                 <input type="checkbox" name="checkbox">
-                Remember Me?
+                <span  > Remember Me?
+                </span>
             </div>
             <input type="submit" value="SING UP">
         </form>

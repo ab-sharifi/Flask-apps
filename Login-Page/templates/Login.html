@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+<!-- Success Block -->
+{% block success %}
+    {% if success %}
+    <div class="alert" style="background-color:green;">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        {{ success }}
+    </div>
+    {% endif %}
+{% endblock %}
+
+
+<!-- Error Block -->
+{% block error %}
+    {% if message %}
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        {{ message }}
+    </div>
+    {% endif %}
+{% endblock %}
+
+
+
+{% block body %}
+
+    
+    <div class="register">
+
+        <h3>LOG IN</h3>
+
+        <form action="{{ url_for('login') }}" method="POST">
+            <div class="form">
+                <label><span >Username</span></label><br>
+                <input type="text" name="username" placeholder='Enter your username'>        
+            </div>
+            
+            <div class="form">    
+                <label><span >Password</span></label><br>
+                <input type="password" name="password" placeholder='Enter your Password'>
+            </div>
+
+            <input type="submit" value="LOG IN">
+        </form>
+    </div>
+{% endblock %}
