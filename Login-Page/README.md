@@ -1,4 +1,9 @@
-implementation of a Sing in and Login page with Flask
+#implementation of a Sing in and Login page with Flask
+## How To Run it:
+- windows:
+        py -3 -m venv venv  
+        .\venv\Scripts\activate.bat
+        
 
 ### home page
 <img src="static/homepage.png"  width="450px">
