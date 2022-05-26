@@ -22,7 +22,10 @@ Then Just type:
 
 
 
-#Images From Project:
+# Images From Project:
+
+---
+
 ### - home page
 <img src="static/homepage.png"  width="450px">
 
