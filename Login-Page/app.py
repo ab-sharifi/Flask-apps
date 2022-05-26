@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request,session,url_for
 from cs50 import SQL
 from flask_session import Session
- 
+
 app = Flask(__name__)
 
 
@@ -13,16 +13,12 @@ Session(app)
 db=SQL('sqlite:///data.db')
 
 
-
-
-
-
 def validate(username):
     # username cannot start with number
     if username[0].isdigit():
         return False
 
-    # check for sql injection 
+    # check for sql injection
     if '-' in username:
         return False
 
@@ -37,7 +33,7 @@ def validate(username):
 def validate_username(username):
     answer = db.execute("""
     SELECT username FROM users WHERE username LIKE ?""",username)
-    
+
     if len(answer) != 0:
         # username is exists
         return False
@@ -47,10 +43,10 @@ def validate_username(username):
 
 def validate_password(password):
     temp = hash(password)
-    
+
     answer = db.execute("""
         SELECT * FROM users WHERE password = ?""",temp)
-    
+
     if len(answer) != 0:
         # return True password is correct
         return True
@@ -93,11 +89,11 @@ def index():
 
 @app.route('/singup',methods=['POST','GET'])
 def singup():
-    
+
     # GET
     if request.method == 'GET':
         return render_template('singup.html')
-    
+
     # POST
     if request.method == 'POST':
         username = request.form.get('username')
@@ -107,17 +103,17 @@ def singup():
         # check box's Not Empty
         if not email or not username or not password:
             return render_template("singup.html",message='Error: Please Full The Box')
-        
-        # validate username is correct 
+
+        # validate username is correct
         if (not validate(username)):
             return render_template("singup.html",message='Username is Not Correct Username Cannot Start With Number or have Space Between it Username Should just have Number and Character')
-        
+
 
         # validate username is not duplicate
         if (not validate_username(username)):
             return render_template("singup.html",message='Username Already Take by another User :( ')
 
-        # validate email of user 
+        # validate email of user
         if (not validate_email(email)):
             return render_template("singup.html",message='This Email Already Exists :( ')
 
@@ -126,28 +122,37 @@ def singup():
         if not create_account(email=email,username=username,password=password):
             return render_template("singup.html",message='Error Something Wrong In Server Side :( ')
 
-        session['name']= username
+        session['username']= username
+        session['email'] = email
 
         # Register complete redirect user to login page
         return redirect(url_for('login'))
-        
+
 
 
 
 
 @app.route('/login',methods=['POST','GET'])
 def login():
-    if request.method == 'GET':
-        return render_template('login.html')
 
+    # GET
+    if request.method == 'GET':
+
+        if not session.get('username'):
+            return render_template('login.html')
+
+        return render_template('Profile.html',name=session.get('username'),email=session.get('email'))
+
+
+    # POST
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        
+
         # validate username input
         if validate(username) == False:
             return render_template("login.html",message='Username is Not Correct Username Cannot Start With Number or have Space Between it Username Should just have Number and Character')
-        
+
         # validate is username is in the data base
         if (validate_username(username) == True):
             return render_template("login.html",message="Username does Not Exists !")
@@ -159,7 +164,8 @@ def login():
         result = fetch_data(username)
         name = result[0].get('username')
         email = result[0].get('email')
-        
+
+
         return render_template('Profile.html',email=email,name=name)
 
 
