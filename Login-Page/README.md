@@ -10,6 +10,11 @@
         python3 -m venv venv
         . venv\bin\activate
 
+
+Then Install requirements Library's:
+        
+        pip install -r requirements.txt 
+
 ### home page
 <img src="static/homepage.png"  width="450px">
 
