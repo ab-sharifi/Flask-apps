@@ -16,6 +16,9 @@ implementation of a Sing in and Login page with Flask
 <img src="static/after-login.png"  width="450px">
 
 
+### data base Stored hashed password
+<img src="static/database.png"  width="450px">
+
 ___
 ### web app also can Handel Error's :
 
