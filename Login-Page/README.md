@@ -18,7 +18,7 @@ Then Install requirements Library's:
 
 Then Just type: 
 
-        flask fun
+        flask run
 
 
 
