@@ -9,11 +9,11 @@ implementation of a Sing in and Login page with Flask
 
 
 ### Log in Page
-<img src="static/after-login.png" width="450px">
+<img src="static/login.png" width="450px">
 
 
 ### after log in 
-<img src="static/user-doennot.png"  width="450px">
+<img src="static/after-login.png"  width="450px">
 
 
 ___
