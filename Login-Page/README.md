@@ -1,5 +1,6 @@
-#implementation of a Sing in and Login page with Flask
-## How To Run it:
+# implementation of a Sing in and Login page with Flask
+
+## How To Run :
 - windows:
 
         py -3 -m venv venv  
