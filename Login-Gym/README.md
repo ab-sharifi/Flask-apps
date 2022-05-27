@@ -1,20 +1,35 @@
 # SIMPLE login Web Application 
 
-## for Run:
-### - in windows: 
+## How To Run :
+- windows:
 
-1 - set FLASK_APP=application.py
-<br>
-2 - py -3 -m venv venv
- <br>
-3 - .\venv\scripts\activate.bat
+        py -3 -m venv venv  
+        .\venv\Scripts\activate.bat
+
+- Linux or Mac:
+
+        python3 -m venv venv
+        . venv\bin\activate
 
 
-### - in Linux:
-1 - export FLASK_APP=application.py
- <br>
-2 -  source /venv/bin/activate
- <br>
+## Then Install requirements Library's:
+        
+        pip install -r requirements.txt 
+
+___
+
+## How Run Local Host : 
+ 
+ - Windows :        
+        
+        set FLASK_ENV=development
+        flask run
+
+- Linux Or Mac:
+
+        export FLASK_ENV=development
+        flask run
+
 
 
 ### and then just type: flask run
