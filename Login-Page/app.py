@@ -13,6 +13,10 @@ Session(app)
 db=SQL('sqlite:///data.db')
 
 
+
+
+
+
 def validate(username):
     # username cannot start with number
     if username[0].isdigit():
@@ -167,6 +171,4 @@ def login():
 
 
         return render_template('Profile.html',email=email,name=name)
-
-
 
