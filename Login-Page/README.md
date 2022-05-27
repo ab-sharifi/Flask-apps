@@ -18,7 +18,9 @@ Then Install requirements Library's:
 
 
 Then Just type: 
-
+ - windows:        
+        
+        set FLASK_ENV=development
         flask run
 
 
