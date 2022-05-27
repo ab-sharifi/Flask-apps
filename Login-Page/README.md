@@ -26,7 +26,7 @@ How Run Local Host :
 
 - Linux Or Mac:
 
-        export FLASK_env=development
+        export FLASK_ENV=development
         flask run
 
 
