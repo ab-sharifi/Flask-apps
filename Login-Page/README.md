@@ -17,7 +17,8 @@ Then Install requirements Library's:
         pip install -r requirements.txt 
 
 
-Then Just type: 
+How Run Local Host : 
+ 
  - Windows :        
         
         set FLASK_ENV=development
