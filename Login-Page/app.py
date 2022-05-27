@@ -12,11 +12,6 @@ Session(app)
 # connect with data base
 db=SQL('sqlite:///data.db')
 
-
-
-
-
-
 def validate(username):
     # username cannot start with number
     if username[0].isdigit():
@@ -85,7 +80,6 @@ def fetch_data(username):
     return answer
 
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -133,9 +127,6 @@ def singup():
         return redirect(url_for('login'))
 
 
-
-
-
 @app.route('/login',methods=['POST','GET'])
 def login():
 
@@ -146,7 +137,6 @@ def login():
             return render_template('login.html')
 
         return render_template('Profile.html',name=session.get('username'),email=session.get('email'))
-
 
     # POST
     if request.method == 'POST':
@@ -168,7 +158,6 @@ def login():
         result = fetch_data(username)
         name = result[0].get('username')
         email = result[0].get('email')
-
 
         return render_template('Profile.html',email=email,name=name)
 
