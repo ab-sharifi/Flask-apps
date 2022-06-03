@@ -23,11 +23,13 @@ ___
  - Windows :        
         
         set FLASK_ENV=development
+        set FLASK_APP=application.py
         flask run
 
 - Linux Or Mac:
 
         export FLASK_ENV=development
+        export FLASK_APP=application.py
         flask run
 
 
